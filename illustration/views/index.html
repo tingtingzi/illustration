@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block title %} dsfdsf {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/index.scss' %}"/>
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script>
+        $(function() {
+            $('.hehe').click(function() {
+                alert('this is hehe');
+            })
+        })
+    </script>
+{% endblock %}
+
+
+{% block page %}
+    <a href="javascript:;" class="hehe">个人中心</a>
+
+    <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+        <!--菜单部分-->
+
+        <div class="mui-inner-wrap">
+            <!--header-->
+
+            <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--滚动图片-->
+
+                    <div class="store-product">
+                        <ul id="products-container"></ul>
+                    </div>
+
+                </div>
+            </div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
+        </div>
+    </div>
+
+    {% raw %}
+    <script type="text/x-handlebars-template" id="store-product-template">
+    </script>
+    {% endraw %}
+
+{% endblock %}
+
+
