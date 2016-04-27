@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 个人中心 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/personal_comment.scss' %}"/>
+{% endblock %}
+
+{% block page %}
+    <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">我的评论</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href=""></a>
+            <a class="mui-btn mui-btn-link mui-pull-right" href="">编辑</a>
+        </header>
+    </div>
+{% endblock %}
