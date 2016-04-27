@@ -1,1 +1,27 @@
 @import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+
+
+body {
+    background: #fff;
+}
+.views,
+#header {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+}
+div.mui-content {
+    background: #fff;
+}
+
+
+
+.margin-b-10 {
+    margin-bottom: 20px;
+}
+.hr {
+    border-bottom: 1px solid #eee;
+}
+

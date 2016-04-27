@@ -1,0 +1,70 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "footer";
+
+
+.personal-header {
+    display: block;
+    height: 10em;
+    width: 100%;
+    background: url("../img/personal-bg.png") no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #FFF;
+
+    &-img {
+        width: 4.5em;
+        border-radius: 4em;
+        border: .125em solid #e40507;
+        margin-top: 0.75em;
+        display: inline-block;
+        overflow: hidden;
+        background-size: cover;
+        background: #f3f4f6;
+    }
+    p {
+        color: #fff;
+    }
+}
+
+
+.personal-box {
+    ul {
+        margin: 20px 10px 10px;
+    }
+    li {
+        @include clearfix();
+        text-align: left;
+        background: url("../img/narror-r.png") no-repeat right center;
+        background-size: 15px auto;
+        margin-top: 2px;
+        padding-bottom: 2px;
+    }
+    a {
+        color: #333;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 40px;
+        display: block;
+        &.comment {
+            background: url("../img/icon-comment.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.collect {
+            background: url("../img/icon-collect.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.like {
+            background: url("../img/icon-like.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.join {
+            background: url("../img/icon-join.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.apply {
+            background: url("../img/icon-apply.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+    }
+}

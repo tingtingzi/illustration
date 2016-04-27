@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 个人中心 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/personal_index.scss' %}"/>
+{% endblock %}
+
+
+{% block page %}
+    <div class="views">
+
+        <div class="mui-content">
+            <a href="/personal/user/" class="personal-header">
+                <img class="personal-header-img" src="{% static '/img/personal-head1.png' %}">
+                <p class="personal-header-name">用户名甲</p>
+            </a>
+
+            <div class="personal-box">
+                <ul>
+                    <li class="hr">
+                        <a href="/personal/comment/" class="comment">我的评论</a>
+                    </li>
+                    <li class="margin-b-10">
+                        <a href="/personal/collect/" class="collect">我的收藏</a>
+                    </li>
+                    <li class="hr">
+                        <a href="/personal/like/" class="like">我感兴趣</a>
+                    </li>
+                    <li class="margin-b-10">
+                        <a href="/personal/join/" class="join">参加记录</a>
+                    </li>
+                    <li>
+                        <a href="/personal/apply/" class="apply">报名记录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        {% include 'include/footer.html' %}
+    </div>
+{% endblock %}
+
+

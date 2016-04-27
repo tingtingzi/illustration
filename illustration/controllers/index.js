@@ -39,26 +39,26 @@ router.get('/news/index', function (req, res) {
 });
 
 
-router.get('/profile/apply', function (req, res) {
-    res.render('profile/apply');
+router.get('/personal/apply', function (req, res) {
+    res.render('personal/apply');
 });
-router.get('/profile/collect', function (req, res) {
-    res.render('profile/collect');
+router.get('/personal/collect', function (req, res) {
+    res.render('personal/collect');
 });
-router.get('/profile/comment', function (req, res) {
-    res.render('profile/comment');
+router.get('/personal/comment', function (req, res) {
+    res.render('personal/comment');
 });
-router.get('/profile/index', function (req, res) {
-    res.render('profile/index');
+router.get('/personal/index', function (req, res) {
+    res.render('personal/index');
 });
-router.get('/profile/join', function (req, res) {
-    res.render('profile/join');
+router.get('/personal/join', function (req, res) {
+    res.render('personal/join');
 });
-router.get('/profile/like', function (req, res) {
-    res.render('profile/like');
+router.get('/personal/like', function (req, res) {
+    res.render('personal/like');
 });
-router.get('/profile/user', function (req, res) {
-    res.render('profile/user');
+router.get('/personal/user', function (req, res) {
+    res.render('personal/user');
 });
 
 
