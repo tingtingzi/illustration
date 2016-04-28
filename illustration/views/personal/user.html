@@ -1,104 +1,71 @@
 {% extends 'base.html' %}
 
 
-{% block title %} 个人中心 {% endblock %}
+{% block title %} 账号管理 {% endblock %}
 
 
 {% block css %}
-<link rel="stylesheet" href="{% static '/css/base.scss' %}" />
-<link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
-<link rel="stylesheet" href="{% static '/css/personal_index.scss' %}"/>
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/personal_user.scss' %}"/>
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static '/js/upload.js' %}"></script>
 {% endblock %}
 
 
 {% block page %}
 <div class="views">
     <header id="header" class="mui-bar mui-bar-nav">
-        <h1 class="mui-title">个人中心</h1>
-        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">账号管理</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/index/"></a>
     </header>
 
     <div class="mui-content">
-        <a href="/personal/user/" class="head-img">
-            <img src="{% static '/img/toolbar_personal.png' %}">
-            <span class="name">sdfdsfsdfdsfdsf</span>
-            <span class="mui-icon mui-icon-forward personal-right"></span>
-        </a>
+        <form class="upload-form" action="/upload/images/" target="iframe-upload" method="post" enctype="multipart/form-data">
+                <input type="file"
+                       name="image"
+                       id="upload-image"
+                       accept="image/png, image/gif, image/jpeg, image/jpg;"
+                       onchange="uploadImg();"  />
+        </form>
 
-
-        <a href="/order/list/" class="all-order">
-            <div class="couponIn-item">
-                <div class="mui-icon order-icon">
-                    <img src="{% static '/img/order.png' %}">
-                </div>
-                <span class="info-title">我的订单 </span>
-                <span class="mui-icon mui-icon-arrowright narraw-right"></span>
-                <span class="info-order">查看全部订单</span>
-            </div>
-        </a>
-
-        <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media">
-                <a href="#">
-                                <span class="mui-icon">
-                                    <img alt="" src="{% static '/img/waitting-pay.png' %}">
-                                </span>
-                    <div class="mui-media-body">待付款</div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media">
-                <a href="#">
-                                <span class="mui-icon">
-                                    <span class="mui-badge">5</span>
-                                    <img alt="" src="{% static '/img/waitting-deliver.png' %}">
-                                </span>
-                    <div class="mui-media-body">待发货</div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media">
-                <a href="#">
-                                <span class="mui-icon">
-                                    <img alt="" src="{% static '/img/waitting-receive.png' %}">
-                                </span>
-                    <div class="mui-media-body">待收货</div>
-                </a>
-            </li>
-            <li class="mui-table-view-cell mui-media">
-                <a href="#">
-                                <span class="mui-icon">
-                                    <img alt="" src="{% static '/img/waitting-comment.png' %}">
-                                </span>
-                    <div class="mui-media-body">待评价</div>
-                </a>
-            </li>
-        </ul>
-
-
-        <div class="mui-content-margin">
-            <ul class="mui-table-view address-box">
-                <li class="mui-table-view-cell">
-                    <a href="/personal/address/" class="mui-navigate-right">收货地址管理</a>
+        <div class="user">
+            <ul>
+                <li class="hr user-img-box">
+                    <label for="upload-image" id="upload-labe">
+                        <span class="user-title">头像</span>
+                        <img class="user-img" src="{% static '/img/personal-head1.png' %}" alt=""/>
+                    </label>
+                </li>
+                <li class="hr user-box">
+                    <span class="user-title">昵称</span>
+                    <span class="name-value user-val">好画好说</span>
+                </li>
+                <li class="user-box">
+                    <span class="user-title">签名</span>
+                    <span class="sign-value user-val">好画好说</span>
                 </li>
             </ul>
         </div>
 
-
-        <div class="mui-content-margin">
-            <ul class="mui-table-view">
-                <li class="mui-table-view-cell">
-                    <a href="/auth/resetpwd/" class="mui-navigate-right">账户安全设置</a>
+        <div class="user">
+            <ul>
+                <li class="hr user-box">
+                    <span class="user-title">手机号</span>
+                    <span class="phone-value user-val">1865555555</span>
+                </li>
+                <li class="user-box">
+                    <a class="change-pwd" href="">修改密码</a>
                 </li>
             </ul>
         </div>
 
-
-        <div class="mui-content-margin">
-            <ul class="mui-table-view">
-                <li class="mui-table-view-cell">
-                    <a href="/personal/message/" class="mui-navigate-right">消息中心</a>
-                </li>
-            </ul>
-        </div>
+        <a class="logout-btn" href="">退出登录</a>
     </div>
 </div>
 {% endblock %}

@@ -4,18 +4,13 @@
 
 
 body {
-    background: #fff;
+    background: #f7f7f7;
 }
 .views,
 #header {
     max-width: 640px;
     margin: 0 auto;
-    background: #fff;
 }
-div.mui-content {
-    background: #fff;
-}
-
 
 
 .margin-b-10 {
@@ -24,4 +19,6 @@ div.mui-content {
 .hr {
     border-bottom: 1px solid #eee;
 }
-
+.color-gray {
+    color: #333;
+}
