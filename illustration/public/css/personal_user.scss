@@ -18,6 +18,11 @@
         margin-top: 2px;
         padding-bottom: 2px;
     }
+    a {
+        display: inline-block;
+        width: 100%;
+        color: #333;
+    }
     &-box {
         color: #333;
         height: 40px;
@@ -53,12 +58,6 @@
     }
     .change-pwd {
         display: block;
-        color: #333;
-    }
-    .user-update-btn,
-    .send-verify-code {
-        display: inline-block;
-        width: 100%;
         color: #333;
     }
 }

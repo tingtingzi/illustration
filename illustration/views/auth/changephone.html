@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 更换手机号 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/auth_changephone.scss' %}"/>
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/auth_changephone.js' %}"></script>
+{% endblock %}
+
+
+{% block page %}
+    <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">更换手机号</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/user/"></a>
+        </header>
+
+        <div class="mui-content">
+            <form action="." method="post" enctype="multipart/form-data">
+                <div class="controls">
+                    <input type="text" id="id_verify_code" name="verify_code" />
+                    <div>
+                        <button type="button" class="verify_code" id="js-send-verify_code">发送短信验证码</button>
+                    </div>
+                </div>
+                <input type="submit" class="change-phone-btn" value="确认更换" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+

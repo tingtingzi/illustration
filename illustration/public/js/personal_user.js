@@ -61,7 +61,7 @@ $(function() {
         });
     });
 
-    /* 修改手机号弹框 */
+    /* 修改密码时发送验证码弹框 */
     $('body').on('click', '.send-verify-code', function (e) {
         e.preventDefault();
         var _self = $(this);
@@ -84,6 +84,26 @@ $(function() {
                 this.remove();
             }
         })
+    });
+
+    /* 发送验证提交 */
+    $('body').on('click', '.verify-code-btn', function () {
+        var self = $(this);
+        var url = self.data("url");
+        var phone = self.data("phone");
+
+        if (self.hasClass('posting')) {
+            return false;
+        }
+        self.addClass('posting');
+        $.post(url, {'phone': phone}, function (resp) {
+            if (resp.state) {
+                window.location.href = resp.redirect_url;
+            } else {
+                self.removeClass('posting');
+                alert('提交失败!');
+            }
+        });
     });
 
     /* 实时监控剩余字数 */

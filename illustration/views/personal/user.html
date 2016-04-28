@@ -73,16 +73,16 @@
             <div class="user">
                 <ul>
                     <li class="hr user-box">
-                        <a href="javascript:;"
-                           class="send-verify-code"
-                           data-phone="18655555555"
-                           data-url="/personal/index/">
+                        <a href="/auth/changephone/">
                             <span class="user-title">手机号</span>
                             <span class="phone-value user-val">1865555555</span>
                         </a>
                     </li>
                     <li class="user-box">
-                        <a class="change-pwd" href="">修改密码</a>
+                        <a href="javascript:;"
+                           class="send-verify-code"
+                           data-phone="18655555555"
+                           data-url="/personal/index/">修改密码</a>
                     </li>
                 </ul>
             </div>
@@ -116,7 +116,7 @@
             <p class="phone-content">将给手机{{ phone }}发送验证码</p>
 
             <div class="pop-actions">
-                <span class="mui-btn mui-btn-danger verify-code-btn" data-url="{{ url }}">确定</span>
+                <span class="mui-btn mui-btn-danger verify-code-btn" data-url="{{ url }}" data-phone="{{ phone }}">确定</span>
                 <span class="mui-btn mui-btn-outlined cancel">取消</span>
             </div>
         </div>
