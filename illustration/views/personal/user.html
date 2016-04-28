@@ -12,62 +12,116 @@
 
 
 {% block js %}
-    <script src="{% static '/widget/js/mui.min.js' %}"></script>
-    <script src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
-    <script src="{% static '/js/upload.js' %}"></script>
+    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/handlebars.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery.bpopup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/upload.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/personal_user.js' %}"></script>
 {% endblock %}
 
 
 {% block page %}
-<div class="views">
-    <header id="header" class="mui-bar mui-bar-nav">
-        <h1 class="mui-title">账号管理</h1>
-        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/index/"></a>
-    </header>
+    <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">账号管理</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/index/"></a>
+        </header>
 
-    <div class="mui-content">
-        <form class="upload-form" action="/upload/images/" target="iframe-upload" method="post" enctype="multipart/form-data">
-                <input type="file"
-                       name="image"
-                       id="upload-image"
-                       accept="image/png, image/gif, image/jpeg, image/jpg;"
-                       onchange="uploadImg();"  />
-        </form>
+        <div class="mui-content">
+            <form class="upload-form" action="/upload/images/" target="iframe-upload" method="post" enctype="multipart/form-data">
+                    <input type="file"
+                           name="image"
+                           id="upload-image"
+                           accept="image/png, image/gif, image/jpeg, image/jpg;"
+                           onchange="uploadImg();"  />
+            </form>
 
-        <div class="user">
-            <ul>
-                <li class="hr user-img-box">
-                    <label for="upload-image" id="upload-labe">
-                        <span class="user-title">头像</span>
-                        <img class="user-img" src="{% static '/img/personal-head1.png' %}" alt=""/>
-                    </label>
-                </li>
-                <li class="hr user-box">
-                    <span class="user-title">昵称</span>
-                    <span class="name-value user-val">好画好说</span>
-                </li>
-                <li class="user-box">
-                    <span class="user-title">签名</span>
-                    <span class="sign-value user-val">好画好说</span>
-                </li>
-            </ul>
+            <div class="user">
+                <ul>
+                    <li class="hr user-img-box">
+                        <label for="upload-image" id="upload-label">
+                            <span class="user-title">头像</span>
+                            <img class="user-img" src="{% static '/img/personal-head1.png' %}" alt=""/>
+                        </label>
+                    </li>
+                    <li class="hr user-box">
+                        <a href="javascript:;"
+                           class="user-update-btn"
+                           data-title="请输入用户名"
+                           data-val="这是昵称"
+                           data-type="name"
+                           data-url="/personal/user/">
+                            <span class="user-title">昵称</span>
+                            <span class="name-value user-val">这是昵称</span>
+                        </a>
+                    </li>
+                    <li class="user-box">
+                        <a href="javascript:;"
+                           class="user-update-btn"
+                           data-title="请输入个性签名"
+                           data-val="这是个性签名"
+                           data-type="sign"
+                           data-url="/personal/index/">
+                            <span class="user-title">签名</span>
+                            <span class="sign-value user-val">这是个性签名</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="user">
+                <ul>
+                    <li class="hr user-box">
+                        <a href="javascript:;"
+                           class="send-verify-code"
+                           data-phone="18655555555"
+                           data-url="/personal/index/">
+                            <span class="user-title">手机号</span>
+                            <span class="phone-value user-val">1865555555</span>
+                        </a>
+                    </li>
+                    <li class="user-box">
+                        <a class="change-pwd" href="">修改密码</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a class="logout-btn" href="">退出登录</a>
         </div>
-
-        <div class="user">
-            <ul>
-                <li class="hr user-box">
-                    <span class="user-title">手机号</span>
-                    <span class="phone-value user-val">1865555555</span>
-                </li>
-                <li class="user-box">
-                    <a class="change-pwd" href="">修改密码</a>
-                </li>
-            </ul>
-        </div>
-
-        <a class="logout-btn" href="">退出登录</a>
     </div>
-</div>
+
+    {% raw %}
+    <!-- 修改昵称、修改个性签名弹框 -->
+    <script type="text/template" id="alert-tip-template">
+        <div class="pop">
+            <div class="pop-title">{{ title }}</div>
+
+            <div class="pop-content">
+                <textarea class="content-val" rows="2" maxlength="200">{{ val }}</textarea>
+                <span class="rest-num">剩余{{ num }}个字</span>
+            </div>
+
+            <div class="pop-actions">
+                <span class="mui-btn mui-btn-danger sure" data-url="{{ url }}" data-type="{{ type }}">确定</span>
+                <span class="mui-btn mui-btn-outlined cancel">取消</span>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="verify-code-template">
+        <div class="pop pop-verify-code">
+            <div class="pop-title">修改登录密码</div>
+
+            <p class="phone-content">将给手机{{ phone }}发送验证码</p>
+
+            <div class="pop-actions">
+                <span class="mui-btn mui-btn-danger verify-code-btn" data-url="{{ url }}">确定</span>
+                <span class="mui-btn mui-btn-outlined cancel">取消</span>
+            </div>
+        </div>
+    </script>
+    {% endraw %}
 {% endblock %}
 
 

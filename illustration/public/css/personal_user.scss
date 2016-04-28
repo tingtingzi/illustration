@@ -55,6 +55,12 @@
         display: block;
         color: #333;
     }
+    .user-update-btn,
+    .send-verify-code {
+        display: inline-block;
+        width: 100%;
+        color: #333;
+    }
 }
 
 .logout-btn {
@@ -79,3 +85,56 @@
     display: inline-block;
     width: 100%;
 }
+
+/* 弹框 */
+.pop {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 #dbdbdb;
+    width: 100%;
+    @include clearfix();
+
+    &-title {
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    &-content {
+        @include border-radius(5px);
+        position: relative;
+        border: 1px solid #ccc;
+        margin: 0 10px;
+    }
+
+    .rest-num {
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        font-size: 13px;
+    }
+
+    textarea {
+        border: none;
+        margin: 0 0 20px 0;
+    }
+
+    &-actions {
+        @include clearfix();
+        margin: 10px;
+        span {
+            @include float-right();
+            margin-left: 10px;
+        }
+    }
+}
+
+.pop.pop-verify-code {
+    width: 300px;
+
+    .phone-content {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
