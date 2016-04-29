@@ -2,7 +2,44 @@
 @import "compass/utilities";
 
 
-.change-phone-btn {
+form {
+    margin: 20px;
+}
+.mui-content {
+    background: #f7f7f7;
+}
+.change-phone {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    height: 42px;
+    line-height: 42px;
+    background: #fff;
+
+    .mui-input-row {
+        width: 68%;
+        margin-left: 2%;
+        @include float-left();
+    }
+    input[type=text] {
+        border: none;
+        padding: 0;
+        height: auto;
+        line-height: normal;
+    }
+    a {
+        color: #666;
+        width: 30%;
+        text-align: right;
+    }
+}
+input[type=submit] {
     width: 100%;
+    height: 40px;
     background: #fe0000;
+    border: none;
+}
+.phone-tip {
+    font-size: 13px;
+    margin: 10px;
+    text-align: center;
 }

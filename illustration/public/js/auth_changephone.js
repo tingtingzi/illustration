@@ -3,34 +3,29 @@ $(function() {
      * 发送验证码
      */
     $('#js-send-verify_code').on('click', function () {
-        var btn = $(this);
-        var phone = $('#id_mobile');
+        var self = $(this);
+        var phone = self.data('phone');
 
-        if (!(/^(13[0-9]|15[0-9]|14[0-9]|17[0-9]|18[0-9])\d{8}$/).test($.trim(phone.val()))) {
-            alert('请输入正确的手机号');
+        if (self.hasClass('disabled')) {
             return false;
         }
-
-        if (btn.hasClass('disabled')) {
-            return false;
-        }
-        btn.addClass('disabled');
+        self.addClass('disabled');
         $.ajax({
             url: '/api/mobile_code/',
             type: 'POST',
             dataType: 'json',
-            data: {mobile: $.trim(phone.val())},
+            data: {mobile: phone},
             success: function (resp) {
                 if (resp.code == 10000) {
                     $('#id_verify_code').removeAttr('disabled');
-                    countDown(btn);
+                    countDown(self);
                 } else {
-                    btn.removeClass('disabled');
+                    self.removeClass('disabled');
                     alert(resp.msg);
                 }
             },
             error: function () {
-                btn.removeClass('disabled');
+                self.removeClass('disabled');
                 alert('请求失败，请稍后再试');
             }
         });
@@ -39,17 +34,17 @@ $(function() {
     /**
      * 倒计时
      */
-    var countDownInterval = 0;
+    countDown($('#js-send-verify_code'));
     function countDown(btn) {
-        var seconds = 180;
-        countDownInterval = 0;
+        var seconds = 10;
+        var countDownInterval = 0;
         countDownInterval = setInterval(function () {
-            btn.html(seconds + ' 秒后重发');
+            btn.html('重新发送 ' + seconds);
             seconds--;
-            if (seconds === 0) {
+            if (seconds === -1) {
                 clearInterval(countDownInterval);
                 countDownInterval = 0;
-                btn.html('发送短信验证码').removeClass('disabled');
+                btn.html('重新发送').removeClass('disabled');
             }
         }, 1000);
     }
