@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 我感兴趣 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/personal_like.scss' %}" />
+{% endblock %}
+
+
+{% block js %}{% endblock %}
+
+
+{% block page %}
+    <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">我感兴趣</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/user/"></a>
+            <a class="mui-btn mui-btn-link mui-pull-right" style="color: #666;" href="">编辑</a>
+        </header>
+
+        <div class="mui-content">
+            <ul class="like-box">
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <div class="like-box-top">
+                            <div class="img-box">
+                                <p><img src=""></p>
+                            </div>
+
+                            <div class="like-box-detail">
+                                <p class="title">一起来画插画吧</p>
+                                <p class="tag">周末 交友</p>
+                                <p class="time">时间：2015-06-03</p>
+                                <p class="address">地点：东大桥</p>
+                                <p class="price">费用：20元/人</p>
+                            </div>
+                        </div>
+
+                        <div class="like-box-bottom">
+                            <span class="start">发起：</span>
+                            <div class="part">
+                                <span class="join">10人参加</span>
+                                <span class="like">10人感兴趣</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <div class="like-box-top">
+                            <div class="img-box">
+                                <p><img src=""></p>
+                            </div>
+
+                            <div class="like-box-detail">
+                                <p class="title">一起来画插画吧</p>
+                                <p class="tag">周末 交友</p>
+                                <p class="time">时间：2015-06-03</p>
+                                <p class="address">地点：东大桥</p>
+                                <p class="price">费用：20元/人</p>
+                            </div>
+                        </div>
+
+                        <div class="like-box-bottom">
+                            <span class="start">发起：</span>
+                            <div class="part">
+                                <span class="join">10人参加</span>
+                                <span class="like">10人感兴趣</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <div class="like-box-top">
+                            <div class="img-box">
+                                <p><img src=""></p>
+                            </div>
+
+                            <div class="like-box-detail">
+                                <p class="title">一起来画插画吧</p>
+                                <p class="tag">周末 交友</p>
+                                <p class="time">时间：2015-06-03</p>
+                                <p class="address">地点：东大桥</p>
+                                <p class="price">费用：20元/人</p>
+                            </div>
+                        </div>
+
+                        <div class="like-box-bottom">
+                            <span class="start">发起：</span>
+                            <div class="part">
+                                <span class="join">10人参加</span>
+                                <span class="like">10人感兴趣</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="no-data like">
+                无感兴趣记录
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
