@@ -1,0 +1,125 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+
+span.mui-icon {
+    font-size: 14px;
+    color: #007aff;
+    margin-left: -15px;
+    padding-right: 10px;
+}
+.mui-off-canvas-left {
+    color: #fff;
+}
+.title {
+    margin: 35px 15px 10px;
+}
+.title+.content {
+    margin: 10px 15px 35px;
+    color: #bbb;
+    text-indent: 1em;
+    font-size: 14px;
+    line-height: 24px;
+}
+input {
+    color: #000;
+}
+.news-header {
+    height: 70px;
+    line-height: 70px;
+    font-weight: bold;
+    background: #f52200;
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+
+    .header-img {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        left: 0;
+        top: 0;
+    }
+    img {
+        @include border-radius(50%);
+        width: 50px;
+        margin-top: 10px;
+        background: #f3f4f6;
+    }
+
+    p {
+        color: #fff;
+    }
+}
+.apply-box {
+    margin: 0 10px;
+
+    li {
+        @include clearfix();
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+    }
+}
+
+.img-box {
+    @include float-left();
+
+    p {
+        display: table-cell;
+        width: 110px;
+        height: 75px;
+        vertical-align: middle;
+        background: #eee;
+    }
+
+    img {
+        max-width: 110px;
+        max-height: 75px;
+        text-align: center;
+    }
+}
+
+.apply-box-detail {
+    margin-left: 120px;
+
+    .describe {
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+
+    .intro {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .comment {
+        background: url("../img/comment-icon.png") no-repeat left center;
+        background-size: 30px 25px;
+        padding-left: 30px;
+        margin-left: 20px;
+    }
+}
+
+.no-data {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 90px;
+
+    &.apply {
+        background: url("../img/icon-apply.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+    &.join {
+        background: url("../img/icon-join.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+    &.collect {
+        background: url("../img/icon-collect.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+}
