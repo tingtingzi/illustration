@@ -1,0 +1,76 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+
+.apply-box {
+    margin: 0 10px;
+
+    li {
+        @include clearfix();
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+    }
+}
+
+.img-box {
+    @include float-left();
+
+    p {
+        display: table-cell;
+        width: 110px;
+        height: 75px;
+        vertical-align: middle;
+        background: #eee;
+    }
+
+    img {
+        max-width: 110px;
+        max-height: 75px;
+        text-align: center;
+    }
+}
+
+.apply-box-detail {
+    margin-left: 120px;
+
+    .describe {
+        height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+
+    .intro {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .comment {
+        background: url("../img/comment-icon.png") no-repeat left center;
+        background-size: 30px 25px;
+        padding-left: 30px;
+        margin-left: 20px;
+    }
+}
+
+.no-data {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 90px;
+
+    &.apply {
+        background: url("../img/icon-apply.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+    &.join {
+        background: url("../img/icon-join.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+    &.collect {
+        background: url("../img/icon-collect.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+}
