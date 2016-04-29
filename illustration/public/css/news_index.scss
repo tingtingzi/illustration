@@ -2,28 +2,22 @@
 @import "compass/utilities";
 
 
-span.mui-icon {
-    font-size: 14px;
-    color: #007aff;
-    margin-left: -15px;
-    padding-right: 10px;
-}
 .mui-off-canvas-left {
     color: #fff;
 }
-.title {
-    margin: 35px 15px 10px;
+
+.mui-content {
+    overflow-y: auto;
 }
-.title+.content {
-    margin: 10px 15px 35px;
-    color: #bbb;
-    text-indent: 1em;
-    font-size: 14px;
-    line-height: 24px;
+.news-box-img {
+    width: 120%;
+    overflow: hidden;
+    .img-box {
+        @include float-left();
+        margin-right: 2px;
+    }
 }
-input {
-    color: #000;
-}
+
 .news-header {
     height: 70px;
     line-height: 70px;
@@ -51,7 +45,7 @@ input {
         color: #fff;
     }
 }
-.apply-box {
+.news-box {
     margin: 0 10px;
 
     li {
@@ -83,8 +77,14 @@ input {
     }
 }
 
-.apply-box-detail {
+.news-box-detail {
     margin-left: 120px;
+
+    &.news-box-index {
+        margin: 50px 10px 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
 
     .describe {
         height: 40px;
@@ -103,23 +103,13 @@ input {
         padding-left: 30px;
         margin-left: 20px;
     }
-}
 
-.no-data {
-    margin-top: 80px;
-    text-align: center;
-    padding-top: 90px;
-
-    &.apply {
-        background: url("../img/icon-apply.png") no-repeat center top;
-        background-size: auto 80px;
-    }
-    &.join {
-        background: url("../img/icon-join.png") no-repeat center top;
-        background-size: auto 80px;
-    }
-    &.collect {
-        background: url("../img/icon-collect.png") no-repeat center top;
-        background-size: auto 80px;
+    .exclusive {
+        @include float-right();
+        border: 1px solid #eee;
+        color: #f52200;
+        padding: 2px 5px;
+        font-size: 13px;
+        margin-top: -3px;
     }
 }
