@@ -35,11 +35,17 @@ input[type=submit] {
     height: 40px;
     background: #fe0000;
     border: none;
-    margin: 20px 0 10px 0;
+    margin: 10px 0;
 
     &.disabled {
         background: #999;
     }
+}
+
+
+input[type=password] {
+    border-radius: 0;
+    border-top: none;
 }
 .phone-tip {
     font-size: 13px;

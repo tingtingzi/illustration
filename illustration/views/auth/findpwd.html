@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 找回密码 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/auth_findpwd.scss' %}"/>
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/auth_findpwd.js' %}"></script>
+{% endblock %}
+
+
+{% block page %}
+    <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">找回密码</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/user/"></a>
+        </header>
+
+        <div class="mui-content">
+            <form action="." method="post" enctype="multipart/form-data">
+                <div class="change-phone">
+                    <div class="mui-input-row">
+                        <input type="text" class="mui-input-clear" id="id_verify_code" name="verify_code">
+                    </div>
+                    <a href="javascript:;" class="verify_code" id="js-send-verify_code" data-phone="18611111111"></a>
+                </div>
+                <div class="mui-input-row mui-password">
+                    <input type="password" class="mui-input-password" data-input-password="3" placeholder="请输入密码（6-20位英文或数字）">
+                </div>
+
+                <input type="submit" class="change-pwd-btn disabled" value="确定修改" />
+                <h6 class="phone-tip">已向手机1888888888发送验证码</h6>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
