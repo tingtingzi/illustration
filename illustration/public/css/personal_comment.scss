@@ -1,0 +1,82 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+
+.comment-box {
+    margin: 0 10px;
+
+    li {
+        @include clearfix();
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+    }
+
+    .img {
+        @include border-radius(50%);
+        @include float-left();
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background-size: cover;
+        background: #ffa841;
+    }
+}
+
+
+.comment-box-detail {
+    margin-left: 60px;
+
+    .intro {
+        @include clearfix();
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .comment {
+        @include float-right();
+        height: 25px;
+        background: url("../img/comment.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+        margin: 0 10px 0 20px;
+    }
+
+    .like {
+        @include float-right();
+        height: 25px;
+        background: url("../img/like.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+
+        &.liked {
+            background: url("../img/logo-like.png") no-repeat left top;
+            background-size: auto 25px;
+        }
+    }
+
+    .time {
+        font-size: 13px;
+        margin: 2px 0 10px 0;
+    }
+
+    .describe {
+        max-height: 60px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+}
+
+.no-data {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 90px;
+
+    &.comment {
+        background: url("../img/icon-comment.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+}
