@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 收藏状态 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/news_comment.scss' %}" />
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/handlebars.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery.bpopup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/news_comment.js' %}"></script>
+{% endblock %}
+
+{% block page %}
+    <div class="views">
+
+        <div class="mui-content">
+            <div class="news_detail">
+                <p class="title">这是标题</p>
+                <p class="time">2012-01-20 12:01</p>
+                <div class="detail">
+                    这是富文本内容这是富文本内容这是富文本蛋糕士大夫士大夫内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容这是富文本内容
+                </div>
+            </div>
+        </div>
+
+        <nav class="news-func">
+            <a href="javascript:;" class="to-comment" data-url="/news/comment">我也说两句</a>
+            <a href="javascript:;" class="collect active"></a>
+            <a href="javascript:;" class="comment"><strong>99+</strong></a>
+        </nav>
+    </div>
+
+    {% raw %}
+    <!-- 发表评论 -->
+    <script type="text/template" id="alert-tip-template">
+        <div class="pop">
+            <div class="pop-content">
+                <textarea class="content-val" rows="2" maxlength="400" placeholder="说两句..."></textarea>
+                <span class="rest-num">剩余400个字</span>
+            </div>
+            <div class="pop-actions">
+                <span class="mui-btn mui-btn-danger sure" data-url="{{ url }}">发表</span>
+                <span class="mui-btn mui-btn-outlined sure" data-url="{{ url }}">发表</span>
+            </div>
+        </div>
+    </script>
+    {% endraw %}
+{% endblock %}
+
+

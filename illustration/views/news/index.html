@@ -13,7 +13,6 @@
 
 {% block js %}
     <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
-    <script type="text/javascript" src="{% static '/js/news_index.js' %}"></script>
 {% endblock %}
 
 
@@ -22,7 +21,32 @@
         <!--侧滑菜单部分-->
         <aside id="offCanvasSide" class="mui-off-canvas-left">
             <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-                <div class="mui-scroll">是死谁水水水水水水水水水水水水
+                <div class="mui-scroll">
+                    <a href="/personal/user/" class="personal-header">
+                        <img class="personal-header-img" src="{% static '/img/personal-head1.png' %}">
+                        <p class="personal-header-name">用户名甲</p>
+                        <span class="narrow-r"></span>
+                    </a>
+
+                    <div class="personal-box">
+                        <ul>
+                            <li class="grayhr padding-t-10">
+                                <a href="/personal/comment/" class="comment">我的评论</a>
+                            </li>
+                            <li class="margin-b-10">
+                                <a href="/personal/collect/" class="collect">我的收藏</a>
+                            </li>
+                            <li class="grayhr  padding-t-10">
+                                <a href="/personal/like/" class="like">我感兴趣</a>
+                            </li>
+                            <li class="margin-b-10">
+                                <a href="/personal/join/" class="join">参加记录</a>
+                            </li>
+                            <li class="grayhr  padding-t-10">
+                                <a href="/personal/apply/" class="apply">报名记录</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -30,7 +54,7 @@
         <div class="mui-inner-wrap">
             <header class="mui-bar mui-bar-nav news-header">
                 <a href="#offCanvasSide" class="header-img">
-                    <img src="{% static 'img/personal-head1.png' %}" alt=""/>
+                    <img src="{% static '/img/personal-head1.png' %}" alt=""/>
                 </a>
                 <p>好画好说</p>
             </header>
@@ -40,17 +64,17 @@
 
                         <div class="news-box-detail news-box-index">
                             <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
-                            <div class="news-box-img">
-                                <div class="img-box">
-                                    <p><img src=""></p>
-                                </div>
-                                <div class="img-box">
-                                    <p><img src=""></p>
-                                </div>
-                                <div class="img-box">
-                                    <p><img src=""></p>
-                                </div>
-                            </div>
+                            <ul class="news-box-img2">
+                                <li>
+                                    <img src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg" alt=""/>
+                                </li>
+                                <li>
+                                    <img src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg" alt=""/>
+                                </li>
+                                <li>
+                                    <img src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg" alt=""/>
+                                </li>
+                            </ul>
                             <p class='intro'>
                                 <span>老师 </span>
                                 <span>1小时前</span>
@@ -118,82 +142,12 @@
             </div>
             <!-- off-canvas backdrop -->
             <div class="mui-off-canvas-backdrop"></div>
+            {% include 'include/footer.html' %}
+            <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/news_index.js' %}"></script>
         </div>
     </div>
 
-    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
-    <script>
-        mui.init();
-        //侧滑容器父节点
-        var offCanvasWrapper = mui('#offCanvasWrapper');
-        //主界面容器
-        var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
-        //菜单容器
-        var offCanvasSide = document.getElementById("offCanvasSide");
-        if (!mui.os.android) {
-            document.getElementById("move-togger").classList.remove('mui-hidden');
-            var spans = document.querySelectorAll('.android-only');
-            for (var i = 0, len = spans.length; i < len; i++) {
-                spans[i].style.display = "none";
-            }
-        }
-        //移动效果是否为整体移动
-        var moveTogether = false;
-        //侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
-        var classList = offCanvasWrapper[0].classList;
-        //变换侧滑动画移动效果；
-        mui('.mui-input-group').on('change', 'input', function() {
-            if (this.checked) {
-                offCanvasSide.classList.remove('mui-transitioning');
-                offCanvasSide.setAttribute('style', '');
-                classList.remove('mui-slide-in');
-                classList.remove('mui-scalable');
-                switch (this.value) {
-                    case 'main-move':
-                        if (moveTogether) {
-                            //仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-                            offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-                        }
-                        break;
-                    case 'main-move-scalable':
-                        if (moveTogether) {
-                            //仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-                            offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-                        }
-                        classList.add('mui-scalable');
-                        break;
-                    case 'menu-move':
-                        classList.add('mui-slide-in');
-                        break;
-                    case 'all-move':
-                        moveTogether = true;
-                        //整体滑动时，侧滑菜单在inner-wrap内
-                        offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
-                        break;
-                }
-                offCanvasWrapper.offCanvas().refresh();
-            }
-        });
-        //主界面‘显示侧滑菜单’按钮的点击事件
-        document.getElementById('offCanvasShow').addEventListener('tap', function() {
-            offCanvasWrapper.offCanvas('show');
-        });
-        //菜单界面，‘关闭侧滑菜单’按钮的点击事件
-        document.getElementById('offCanvasHide').addEventListener('tap', function() {
-            offCanvasWrapper.offCanvas('close');
-        });
-        //主界面和侧滑菜单界面均支持区域滚动；
-        mui('#offCanvasSideScroll').scroll();
-        mui('#offCanvasContentScroll').scroll();
-        //实现ios平台原生侧滑关闭页面；
-        if (mui.os.plus && mui.os.ios) {
-            mui.plusReady(function() { //5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
-                plus.webview.currentWebview().setStyle({
-                    'popGesture': 'none'
-                });
-            });
-        }
-    </script>
 {% endblock %}
 
 

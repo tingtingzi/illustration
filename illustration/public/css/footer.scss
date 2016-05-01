@@ -11,10 +11,12 @@
     table-layout: fixed;
     width: 100%;
     backface-visibility: hidden;
-    left: 0;
     position: fixed;
     z-index: 10000;
     padding-top: 5px;
+    background: #fff;
+    max-width: 640px;
+    margin: 0 auto;
 
     a {
         @include float-left();

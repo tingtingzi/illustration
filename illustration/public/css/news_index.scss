@@ -1,13 +1,30 @@
 @import "compass/css3";
 @import "compass/utilities";
+@import "footer";
 
-
+.mui-off-canvas-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
 .mui-off-canvas-left {
     color: #fff;
 }
 
 .mui-content {
-    overflow-y: auto;
+    overflow-y: scroll;
+}
+.news-box-img2 {
+    width: 100%;
+    overflow: hidden;
+    li {
+        @include float-left();
+        width: 33.33333%;
+    }
+    img {
+        display: block;
+        background: #eee;
+        width: 93%;
+    }
 }
 .news-box-img {
     width: 120%;
@@ -47,6 +64,7 @@
 }
 .news-box {
     margin: 0 10px;
+    margin-bottom: 70px;
 
     li {
         @include clearfix();
@@ -113,3 +131,93 @@
         margin-top: -3px;
     }
 }
+
+.mui-off-canvas-left, .mui-off-canvas-right {
+    background: #f52200;
+}
+
+/* 左侧 */
+#offCanvasSideScroll {
+    margin-left: 10px;
+    p, a {
+        color: #fff;
+    }
+}
+.personal-header {
+    @include clearfix();
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 10px;
+    margin-right: 20px;
+
+    .narrow-r {
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        background: url("../img/narror-r.png") no-repeat right center;
+        background-size: 15px auto;
+        margin-right: 40px;
+    }
+
+    &-img {
+        @include float-left();
+        @include border-radius(50%);
+        width: 60px;
+        border: .125em solid #e40507;
+        display: inline-block;
+        overflow: hidden;
+        background-size: cover;
+        background: #f3f4f6;
+    }
+    p {
+        @include float-left();
+        margin-left: 10px;
+
+    }
+}
+
+
+.personal-box {
+    ul {
+        margin: 20px 0px 10px;
+    }
+    li {
+        @include clearfix();
+        text-align: left;
+        margin-top: 2px;
+        padding-bottom: 2px;
+    }
+    .grayhr {
+        border-top: 1px solid #c7c7cc;
+    }
+    a {
+        color: #333;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 40px;
+        display: block;
+        &.comment {
+            background: url("../img/icon-comment.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.collect {
+            background: url("../img/icon-collect.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.like {
+            background: url("../img/icon-like.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.join {
+            background: url("../img/icon-join.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.apply {
+            background: url("../img/icon-apply.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+    }
+}
+

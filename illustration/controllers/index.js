@@ -5,7 +5,6 @@ module.exports = function (app) {
     app.use('/', router);
 };
 
-
 router.get('/auth/login', function (req, res) {
     res.render('auth/login');
 });

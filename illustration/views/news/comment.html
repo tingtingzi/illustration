@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 新闻评论 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/news_comment.scss' %}" />
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/handlebars.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery.bpopup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/news_comment.js' %}"></script>
+{% endblock %}
+
+{% block page %}
+    <div class="views">
+
+        <div class="mui-content">
+
+            <div class="head-comment">
+                <a class="active" href=""><span class="new-comment">最新评论</span></a>
+                <a href=""><span class="hot-comment">热门评论</span></a>
+            </div>
+
+            <ul class="comment-box">
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <img class="img" src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg">
+
+                        <div class="comment-box-detail">
+                            <p class="intro">
+                                <span class="title">老师</span>
+                                <span class="comment">100</span>
+                                <span class="like liked">119</span>
+                            </p>
+                            <p class="time">1小时前</p>
+                            <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <img class="img" src="">
+
+                        <div class="comment-box-detail">
+                            <p class="intro">
+                                <span class="title">老师</span>
+                                <span class="comment">100</span>
+                                <span class="like liked">119</span>
+                            </p>
+                            <p class="time">1小时前</p>
+                            <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="jump-link" href="javascript:;">
+                        <img class="img" src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg">
+
+                        <div class="comment-box-detail">
+                            <p class="intro">
+                                <span class="title">老师</span>
+                                <span class="comment">100</span>
+                                <span class="like liked">119</span>
+                            </p>
+                            <p class="time">1小时前</p>
+                            <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="no-data comment">
+                暂无评论
+            </div>
+        </div>
+
+        <nav class="news-func">
+            <a href="javascript:;" class="to-comment" data-url="/news/comment">我也说两句</a>
+            <a href="javascript:;" class="collect active"></a>
+            <a href="javascript:;" class="comment"><strong>99+</strong></a>
+        </nav>
+    </div>
+
+    {% raw %}
+    <!-- 发表评论 -->
+    <script type="text/template" id="alert-tip-template">
+        <div class="pop">
+            <div class="pop-content">
+                <textarea class="content-val" rows="2" maxlength="400" placeholder="说两句..."></textarea>
+                <span class="rest-num">剩余400个字</span>
+            </div>
+            <div class="pop-actions">
+                <span class="mui-btn mui-btn-danger sure" data-url="{{ url }}">发表</span>
+                <span class="mui-btn mui-btn-outlined sure" data-url="{{ url }}">发表</span>
+            </div>
+        </div>
+    </script>
+    {% endraw %}
+{% endblock %}
+
+

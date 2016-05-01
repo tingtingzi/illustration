@@ -1,0 +1,234 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+.mui-content {
+    margin-bottom: 60px;
+}
+.head-comment {
+    @include pie-clearfix();
+    margin: 0 10px;
+    border-bottom: 1px solid #eee;
+    margin-top: 10px;
+    a {
+        @include float-left();
+        width: 50%;
+        color: #666;
+    }
+    span {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: -1.5px;
+    }
+    .new-comment {
+        @include float-right();
+        margin-right: 20px;
+    }
+    .hot-comment {
+        @include float-left();
+        margin-left: 20px;
+    }
+    a.active span {
+        color: #e40507;
+        border-bottom: 2px solid #e40507;
+    }
+}
+
+.comment-box {
+    margin: 0 10px;
+
+    li {
+        @include clearfix();
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+    }
+
+    .img {
+        @include border-radius(50%);
+        @include float-left();
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background-size: cover;
+        background: #ffa841;
+    }
+}
+
+
+.comment-box-detail {
+    margin-left: 60px;
+
+    .intro {
+        @include clearfix();
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .comment {
+        @include float-right();
+        height: 25px;
+        background: url("../img/comment.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+        margin: 0 10px 0 20px;
+    }
+
+    .like {
+        @include float-right();
+        height: 25px;
+        background: url("../img/like.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+
+        &.liked {
+            background: url("../img/logo-like.png") no-repeat left top;
+            background-size: auto 25px;
+        }
+    }
+
+    .time {
+        font-size: 13px;
+        margin: 2px 0 10px 0;
+    }
+
+    .describe {
+        max-height: 60px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+}
+
+.no-data {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 90px;
+
+    &.comment {
+        background: url("../img/icon-comment.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+}
+
+.news-func {
+    @include box-shadow(#333 2px 2px 6px);
+    font-size: 14px;
+    bottom: 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    backface-visibility: hidden;
+    position: fixed;
+    z-index: 100;
+    padding: 10px 0;
+    background: #fff;
+    max-width: 640px;
+    margin: 0 auto;
+
+    .to-comment {
+        @include float-left();
+        @include border-radius(10px);
+        border: 1px solid #eee;
+        display: block;
+        padding: 8px 100px 8px 10px;
+        color: #666;
+        margin-left: 10px;
+    }
+
+    .collect {
+        @include float-right();
+        display: block;
+        margin: 0 10px 0 20px;
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: url("../img/nav-collect.png") no-repeat;
+        background-size: cover;
+
+        &.active {
+            background: url("../img/nav-collect-active.png") no-repeat ;
+            background-size: cover;
+        }
+    }
+    .comment {
+        @include float-right();
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: url("../img/nav-comment.png") no-repeat;
+        background-size: cover;
+
+        strong {
+            @include border-radius(50%);
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 10px;
+            background: red;
+            color: #fff;
+            top: -5px;
+            right: -5px;
+        }
+    }
+}
+
+
+/* 弹框 */
+.pop {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 #dbdbdb;
+    width: 100%;
+    @include clearfix();
+
+    &-content {
+        @include border-radius(5px);
+        position: relative;
+        border: 1px solid #ccc;
+        margin: 10px 10px 0;
+    }
+
+    .rest-num {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        font-size: 13px;
+    }
+
+    textarea {
+        border: none;
+        margin: 0 0 20px 0;
+    }
+
+    &-actions {
+        @include clearfix();
+        margin: 10px;
+        span {
+            @include float-right();
+            margin-left: 10px;
+        }
+    }
+}
+
+.news_detail {
+    .title {
+        max-height: 40px;
+        line-height: 20px;
+        overflow: hidden;
+        margin: 20px 20px 10px 20px;
+    }
+    .time {
+        font-size: 13px;
+        margin: 0 20px;
+    }
+    .detail {
+        margin: 20px;
+    }
+}
+

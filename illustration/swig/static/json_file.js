@@ -1,7 +1,7 @@
 var jsonfile = require('jsonfile');
 var csshashFile, jsHashFile, imgHashFile;
 var cssCompressed, jsCompressed, imgCompressed;
-var isDev = NODE_ENV === 'dev';
+var isDev =  'dev';
 
 try {
     csshashFile = jsonfile.readFileSync('./hash/css_hash.json');
