@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 登录/注册 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/auth_login.scss' %}"/>
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/auth_login.js' %}"></script>
+{% endblock %}
+
+
+{% block page %}
+    <div class="views">
+        <div class="mui-content">
+            <div class="tab-link">
+                <a data-type="login" href="javascript:;" class="active" >登录</a>
+                <a data-type="register" href="javascript:;" class="">注册</a>
+            </div>
+            <div class="tab-content">
+                <div class="tab-content-box active login-box">
+                    <form action="." method="post" enctype="multipart/form-data">
+                        <div class="control-group">
+                            <input type="text" placeholder="手机号/账户名" />
+                        </div>
+                        <div class="control-group">
+                            <input type="password" placeholder="密码" />
+                        </div>
+                        <a href="" class="forget-pwd">忘记密码</a>
+                        <div class="control-group">
+                            <input type="submit" value="登录" />
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="tab-content-box register-box">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
