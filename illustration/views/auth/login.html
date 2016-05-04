@@ -20,6 +20,11 @@
 
 {% block page %}
     <div class="views">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title"></h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color-gray" href="/personal/user/"></a>
+        </header>
+
         <div class="mui-content">
             <div class="tab-link">
                 <a data-type="login" href="javascript:;" class="active" >登录</a>
@@ -30,19 +35,64 @@
                     <form action="." method="post" enctype="multipart/form-data">
                         <div class="control-group">
                             <input type="text" placeholder="手机号/账户名" />
+                            <p class="error"></p>
                         </div>
                         <div class="control-group">
                             <input type="password" placeholder="密码" />
+                            <p class="error"></p>
                         </div>
-                        <a href="" class="forget-pwd">忘记密码</a>
+                        <div class="control-group">
+                            <a href="" class="forget-pwd">忘记密码</a>
+                        </div>
                         <div class="control-group">
                             <input type="submit" value="登录" />
                         </div>
                     </form>
 
+                    <div class="login-title">
+                        <span></span>
+                        <p>其他方式登录</p>
+                    </div>
 
+                    <div class="login-type">
+                        <div>
+                            <a class="qq" href=""></a>
+                            <a class="sina" href=""></a>
+                            <a class="weixin" href=""></a>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="tab-content-box register-box">
+                    <form action="." method="post" enctype="multipart/form-data">
+                        <div class="control-group">
+                            <div class="change-phone">
+                                <div class="mui-input-row">
+                                    <input type="text" class="mui-input-clear" id="id_verify_code" name="verify_code" placeholder="手机号">
+                                </div>
+                                <a href="javascript:;" class="verify_code" id="js-send-verify_code" data-phone="18611111111">发送验证码</a>
+                            </div>
+                            <p class="error"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" placeholder="验证码" />
+                            <p class="error"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="text" placeholder="用户名" />
+                            <p class="error"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="password" placeholder="密码" />
+                            <p class="error"></p>
+                        </div>
+                        <div class="control-group">
+                            <p class="agreement">点击注册表示同意<a href="">用户协议</a></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="submit" value="注册" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
