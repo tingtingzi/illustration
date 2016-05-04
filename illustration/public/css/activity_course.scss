@@ -1,0 +1,110 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "footer";
+@import "slide";
+
+.head-course {
+    @include pie-clearfix();
+    margin: 0 10px;
+    margin-top: 40px;
+    a {
+        @include float-left();
+        width: 50%;
+        color: #666;
+    }
+    span {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: -1.5px;
+    }
+    .course {
+        @include float-right();
+        margin-right: 20px;
+    }
+    .appointment {
+        @include float-left();
+        margin-left: 20px;
+    }
+    a.active span {
+        color: #e40507;
+        border-bottom: 2px solid #e40507;
+    }
+}
+
+.like-box {
+    margin: 0 10px 60px;
+
+    li {
+        @include clearfix();
+        padding: 20px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.img-box {
+    @include float-left();
+
+    p {
+        display: table-cell;
+        width: 140px;
+        height: 110px;
+        vertical-align: middle;
+        background: #eee;
+    }
+
+    img {
+        max-width: 140px;
+        max-height: 110px;
+        text-align: center;
+    }
+}
+
+.like-box-detail {
+    margin-left: 150px;
+
+    p {
+        margin-bottom: 9px;
+    }
+    .tag {
+        font-size: 12px;
+    }
+    .price,
+    .address,
+    .time {
+        font-size: 15px;
+    }
+}
+
+.like-box-bottom {
+    color: #666;
+    .start {
+        @include float-left();
+        margin-top: 5px;
+    }
+    .part {
+        @include float-right();
+        background: #eee;
+        padding-right: 5px;
+
+        span {
+            padding-left: 20px;
+            height: 25px;
+            line-height: 25px;
+        }
+    }
+
+    .join {
+        background: url("../img/logo-persion.png") no-repeat;
+        background-size: 20px auto;
+        margin-right: 10px;
+    }
+    .like {
+        background: url("../img/logo-like.png") no-repeat;
+        background-size: 20px auto;
+    }
+}

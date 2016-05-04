@@ -5,7 +5,7 @@ $(function() {
     var pop = null;
 
     /* 发表评论 */
-    $('body').on('click', '.to-comment', function (e) {
+    $('body').on('click', '#offCanvasWrapper', function (e) {
         e.preventDefault();
         var _self = $(this);
         var param = {

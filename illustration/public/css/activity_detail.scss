@@ -1,0 +1,234 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "footer";
+@import "slide";
+
+
+.like-box {
+    padding-top: 10px;
+
+    li {
+        @include clearfix();
+        padding: 20px 0;
+    }
+
+    .jump-link {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.img-box {
+    @include float-left();
+
+    p {
+        display: table-cell;
+        width: 140px;
+        height: 110px;
+        vertical-align: middle;
+        background: #eee;
+    }
+
+    img {
+        max-width: 140px;
+        max-height: 110px;
+        text-align: center;
+    }
+}
+
+.like-box-detail {
+    margin-left: 150px;
+
+    p {
+        margin-bottom: 9px;
+        font-size: 12px;
+        &.title {
+            font-size: 16px;
+        }
+    }
+}
+
+.like-box-bottom {
+    color: #666;
+    font-size: 13px;
+
+    .join-btn,
+    .like-btn{
+        @include float-right();
+        @include border-radius(10px);
+        color: #f52200;
+        margin-left: 5px;
+        background: #FDBDD7;
+        border: 1px solid #F93A86;
+        padding: 4px 5px;
+    }
+    .part {
+        @include float-left();
+        background: #eee;
+        padding-right: 5px;
+
+        span {
+            padding-left: 20px;
+            height: 25px;
+            line-height: 25px;
+        }
+    }
+
+    .join {
+        background: url("../img/logo-persion.png") no-repeat left center;
+        background-size: 20px auto;
+    }
+    .like {
+        background: url("../img/logo-like.png") no-repeat left center;
+        background-size: 20px auto;
+    }
+}
+
+/* detail */
+.activity-detail {
+    .detail-title {
+        color: #f52200;
+        margin-bottom: 5px;
+    }
+}
+
+/* comment */
+.activity-comment {
+    margin-bottom: 80px;
+    margin-top: 20px;
+    .comment-title {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    .to-comment {
+        @include border-radius(5px);
+        border: 1px solid #ccc;
+        padding: 5px 100px 5px 10px;
+        color: #666;
+        display: inline-block;
+        color: #ccc;
+    }
+}
+
+
+.comment-box {
+    margin: 0 10px;
+
+    li {
+        @include clearfix();
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .jump-link {
+        display: inline-block;
+    }
+
+    .img {
+        @include border-radius(50%);
+        @include float-left();
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background-size: cover;
+        background: #ffa841;
+    }
+}
+
+
+.comment-box-detail {
+    margin-left: 60px;
+
+    .intro {
+        @include clearfix();
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .comment {
+        @include float-right();
+        height: 25px;
+        background: url("../img/comment.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+        margin: 0 10px 0 20px;
+    }
+
+    .like {
+        @include float-right();
+        height: 25px;
+        background: url("../img/like.png") no-repeat left center;
+        background-size: auto 25px;
+        padding-left: 25px;
+
+        &.liked {
+            background: url("../img/logo-like.png") no-repeat left top;
+            background-size: auto 25px;
+        }
+    }
+
+    .time {
+        font-size: 13px;
+        margin: 2px 0 10px 0;
+    }
+
+    .describe {
+        max-height: 60px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+}
+
+.no-data {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 90px;
+
+    &.comment {
+        background: url("../img/icon-comment.png") no-repeat center top;
+        background-size: auto 80px;
+    }
+}
+
+
+/* alert */
+
+/* 弹框 */
+.pop {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 #dbdbdb;
+    width: 100%;
+    @include clearfix();
+
+    &-content {
+        @include border-radius(5px);
+        position: relative;
+        border: 1px solid #ccc;
+        margin: 10px 10px 0;
+    }
+
+    .rest-num {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        font-size: 13px;
+    }
+
+    textarea {
+        border: none;
+        margin: 0 0 20px 0;
+    }
+
+    &-actions {
+        @include clearfix();
+        margin: 10px;
+        span {
+            @include float-right();
+            margin-left: 10px;
+        }
+    }
+}

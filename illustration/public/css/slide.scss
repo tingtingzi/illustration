@@ -1,0 +1,137 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+
+.mui-off-canvas-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.mui-off-canvas-left {
+    color: #fff;
+}
+.mui-content {
+    overflow-y: scroll;
+}
+
+
+.mui-off-canvas-left, .mui-off-canvas-right {
+    background-color: #f52200;
+    background-image: url("../img/nav-bg.png");
+    background-position: bottom left;
+}
+
+
+.news-header {
+    height: 70px;
+    line-height: 70px;
+    font-weight: bold;
+    background: #f52200;
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+
+    .header-img {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        left: 0;
+        top: 0;
+    }
+    img {
+        @include border-radius(50%);
+        width: 50px;
+        margin-top: 10px;
+        background: #f3f4f6;
+    }
+
+    p {
+        color: #fff;
+    }
+}
+
+/* 左侧 */
+#offCanvasSideScroll {
+    margin-left: 10px;
+    p, a {
+        color: #fff;
+    }
+}
+.personal-header {
+    @include clearfix();
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 10px;
+    margin-right: 20px;
+
+    .narrow-r {
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        background: url("../img/narror-r-white.png") no-repeat right center;
+        background-size: 15px auto;
+        margin-right: 40px;
+    }
+
+    &-img {
+        @include float-left();
+        @include border-radius(50%);
+        width: 60px;
+        border: .125em solid #e40507;
+        display: inline-block;
+        overflow: hidden;
+        background-size: cover;
+        background: #f3f4f6;
+    }
+    p {
+        @include float-left();
+        margin-left: 10px;
+
+    }
+}
+
+
+.personal-box {
+    ul {
+        margin: 20px 0px 10px;
+    }
+    li {
+        @include clearfix();
+        text-align: left;
+        margin-top: 2px;
+        padding-bottom: 2px;
+    }
+    .grayhr {
+        border-top: 1px solid #c7c7cc;
+    }
+    a {
+        color: #333;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 40px;
+        display: block;
+        &.comment {
+            background: url("../img/icon-comment-white.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.collect {
+            background: url("../img/icon-collect-white.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.like {
+            background: url("../img/icon-like-white.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.join {
+            background: url("../img/icon-join-white.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+        &.apply {
+            background: url("../img/icon-apply-white.png") no-repeat left center;
+            background-size: 30px auto;
+        }
+    }
+}
+
+

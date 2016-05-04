@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 学院课程 {% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/widget/css/mui.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/base.scss' %}" />
+    <link rel="stylesheet" href="{% static '/css/activity_detail.scss' %}" />
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}
+
+
+
+{% block page %}
+    <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+        <!--侧滑菜单部分-->
+        <aside id="offCanvasSide" class="mui-off-canvas-left">
+            <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <a href="/personal/user/" class="personal-header">
+                        <img class="personal-header-img" src="{% static '/img/personal-head1.png' %}">
+                        <p class="personal-header-name">用户名甲</p>
+                        <span class="narrow-r"></span>
+                    </a>
+
+                    <div class="personal-box">
+                        <ul>
+                            <li class="grayhr padding-t-10">
+                                <a href="/personal/comment/" class="comment">我的评论</a>
+                            </li>
+                            <li class="margin-b-10">
+                                <a href="/personal/collect/" class="collect">我的收藏</a>
+                            </li>
+                            <li class="grayhr  padding-t-10">
+                                <a href="/personal/like/" class="like">我感兴趣</a>
+                            </li>
+                            <li class="margin-b-10">
+                                <a href="/personal/join/" class="join">参加记录</a>
+                            </li>
+                            <li class="grayhr  padding-t-10">
+                                <a href="/personal/apply/" class="apply">报名记录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!--主界面部分-->
+        <div class="mui-inner-wrap">
+            <header class="mui-bar mui-bar-nav news-header">
+                <a href="#offCanvasSide" class="header-img">
+                    <img src="{% static '/img/personal-head1.png' %}" alt=""/>
+                </a>
+                <p>好画好说</p>
+            </header>
+            <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-content-padded">
+
+                        <ul class="like-box">
+                            <li>
+                                <div class="like-box-top">
+                                    <div class="img-box">
+                                        <p><img src=""></p>
+                                    </div>
+
+                                    <div class="like-box-detail">
+                                        <p class="title">一起来画插画吧</p>
+                                        <p>时间：2015-06-03</p>
+                                        <p>地点：东大桥</p>
+                                        <p>费用：20元/人</p>
+                                        <p>类型：交流</p>
+                                        <p>发起：张三</p>
+                                    </div>
+                                </div>
+
+                                <div class="like-box-bottom">
+                                    <div class="part">
+                                        <span class="join">10人参加</span>
+                                        <span class="like">10人感兴趣</span>
+                                    </div>
+                                    <a class="join-btn" href="">我要参加</a>
+                                    <a class="like-btn" href="">我感兴趣</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="activity-detail">
+                            <p class="detail-title">活动详情</p>
+                            <p class="detail-content">
+                                一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧一起来画插画吧
+                            </p>
+                        </div>
+
+                        <div class="activity-comment">
+                            <p class="comment-title">发表评论</p>
+                            <a class="to-comment" href="javascript:;">说点什么吧</a>
+                            <ul class="comment-box">
+                                <li>
+                                    <a class="jump-link" href="javascript:;">
+                                        <img class="img" src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg">
+
+                                        <div class="comment-box-detail">
+                                            <p class="intro">
+                                                <span class="title">老师</span>
+                                                <span class="comment">100</span>
+                                                <span class="like liked">119</span>
+                                            </p>
+                                            <p class="time">1小时前</p>
+                                            <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="jump-link" href="javascript:;">
+                                        <img class="img" src="http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg">
+
+                                        <div class="comment-box-detail">
+                                            <p class="intro">
+                                                <span class="title">老师</span>
+                                                <span class="comment">100</span>
+                                                <span class="like liked">119</span>
+                                            </p>
+                                            <p class="time">1小时前</p>
+                                            <p class="describe">好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画好说好画</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {% raw %}
+                        <!-- 发表评论 -->
+                        <script type="text/template" id="alert-tip-template">
+                            <div class="pop">
+                                <div class="pop-content">
+                                    <textarea class="content-val" rows="2" maxlength="400" placeholder="说两句..."></textarea>
+                                    <span class="rest-num">剩余400个字</span>
+                                </div>
+                                <div class="pop-actions">
+                                    <span class="mui-btn mui-btn-danger sure" data-url="{{ url }}">发表</span>
+                                    <span class="mui-btn mui-btn-outlined sure" data-url="{{ url }}">发表</span>
+                                </div>
+                            </div>
+                        </script>
+                        {% endraw %}
+                    </div>
+                </div>
+            </div>
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
+            {% include 'include/footer.html' %}
+            <script type="text/javascript" src="{% static '/widget/js/mui.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/vendor/handlebars.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/vendor/jquery.bpopup.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/news_comment.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/news_index.js' %}"></script>
+        </div>
+    </div>
+{% endblock %}
+
+
