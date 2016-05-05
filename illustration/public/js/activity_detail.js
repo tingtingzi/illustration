@@ -2,6 +2,7 @@ $(function() {
     'use strict';
     var templates = Handlebars.templates || {};
     templates.alertTip = Handlebars.compile($('#alert-tip-template').html());
+    templates.alert= Handlebars.compile($('#alert-template').html());
     var pop = null;
 
     /* 发表评论 */
@@ -13,7 +14,7 @@ $(function() {
         alertTip(param);
     });
     function alertTip(param) {
-        $("#pop").remove();
+        pop.remove();
         $(templates.alertTip(param)).appendTo('body').bPopup({
             closeClass: 'cancel',
             follow: [false, false],
@@ -56,5 +57,25 @@ $(function() {
         var val = $.trim(self.val());
         val = 400 - val.length;
         $('.rest-num').html('剩余' + val + '个字')
+    })
+
+    /* 我要参加 */
+    document.getElementById('join-btn').addEventListener('tap', function() {
+        $(templates.alert()).appendTo('body').bPopup({
+            autoClose: 1000,
+            modalColor: '#fff',
+            opacity: 1,
+            modal: false,
+
+            onOpen: function () {
+                if (pop) {
+                    pop.remove();
+                }
+                pop = this;
+            },
+            onClose: function () {
+                this.remove();
+            }
+        })
     })
 })

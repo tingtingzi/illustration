@@ -61,6 +61,3 @@ if (mui.os.plus && mui.os.ios) {
     });
 }
 
-mui('.mui-input-group').on('change', 'input', function() {
-
-})

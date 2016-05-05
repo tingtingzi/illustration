@@ -62,7 +62,6 @@
             <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <div class="mui-content-padded">
-
                         <ul class="like-box">
                             <li>
                                 <div class="like-box-top">
@@ -85,7 +84,7 @@
                                         <span class="join">10人参加</span>
                                         <span class="like">10人感兴趣</span>
                                     </div>
-                                    <a class="join-btn" href="">我要参加</a>
+                                    <a class="join-btn" id="join-btn" href="">我要参加</a>
                                     <a class="like-btn" href="">我感兴趣</a>
                                 </div>
                             </li>
@@ -100,7 +99,7 @@
 
                         <div class="activity-comment">
                             <p class="comment-title">发表评论</p>
-                            <a class="to-comment" href="javascript:;">说点什么吧</a>
+                            <a id="to-comment" class="to-comment" href="javascript:;">说点什么吧</a>
                             <ul class="comment-box">
                                 <li>
                                     <a class="jump-link" href="javascript:;">
@@ -149,6 +148,13 @@
                                 </div>
                             </div>
                         </script>
+
+                        <script type="text/template" id="alert-template">
+                            <div class="alert">
+                                <p class="title">参加成功</p>
+                                <p class="detail">详情见个人中心-参加纪录</p>
+                            </div>
+                        </script>
                         {% endraw %}
                     </div>
                 </div>
@@ -160,8 +166,8 @@
             <script type="text/javascript" src="{% static '/js/vendor/jquery-2.2.3.min.js' %}"></script>
             <script type="text/javascript" src="{% static '/js/vendor/handlebars.min.js' %}"></script>
             <script type="text/javascript" src="{% static '/js/vendor/jquery.bpopup.min.js' %}"></script>
-            <script type="text/javascript" src="{% static '/js/news_comment.js' %}"></script>
             <script type="text/javascript" src="{% static '/js/news_index.js' %}"></script>
+            <script type="text/javascript" src="{% static '/js/activity_detail.js' %}"></script>
         </div>
     </div>
 {% endblock %}
